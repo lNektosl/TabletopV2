@@ -1,0 +1,369 @@
+* {
+  font-family: 'Roboto', serif;
+}
+body{
+  margin: 0 0 0 0;
+}
+
+
+.column-2 {
+  width: 50%;
+}
+
+.column-3 {
+  width: 33.33%;
+}
+
+.column-4 {
+  width: 25%;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.s-container {
+  max-width: 900px;
+}
+
+.popUp {
+  display: flex;
+  height: 50px;
+  border-bottom: solid black 0.5px;
+  align-items: center;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  background: #FFFFFF;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.popUp img {
+  height: 25px;
+}
+
+.popUp h2 {
+  font-weight: 300;
+  margin-left: 5%;
+}
+
+.logos {
+  margin-left: 10vh;
+}
+
+header {
+  background: linear-gradient(to right, lightblue, rgb(211, 170, 238));
+  position: relative;
+  height: fit-content;
+  height: 70vh;
+  padding-top: 3%;
+}
+
+.center {
+  text-align: center;
+}
+
+header .container {
+  justify-content: space-between;
+}
+
+header h1 {
+  font-weight: 400;
+}
+
+p {
+  font-weight: 300;
+  font-size: medium;
+}
+
+.hero {
+  max-width: 30%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    display: none;
+  }
+}
+
+.flex-container {
+  display: flex;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(160% + 1.3px);
+  height: 232px;
+  transform: rotateY(180deg);
+}
+
+.wave .shape-fill {
+  fill: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+  .wave svg {
+    width: calc(160% + 1.3px);
+    height: 174px;
+  }
+}
+
+.quote {
+  font-size: xx-large;
+  text-align: center;
+  font-weight: 400;
+  font-style: normal;
+}
+
+section {
+  margin-top: 7vh;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.g_image {
+  max-width: 30%;
+  margin-right: 3vh;
+  margin-top: 4%;
+}
+
+.right {
+  float: right;
+  margin-right: 1vh;
+}
+
+.left {
+  float: left;
+  margin-left: 1vh;
+}
+
+.g_name {
+  font-weight: 400;
+}
+
+.ICenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlight {
+  font-weight: 500;
+  font-style: italic;
+}
+
+.aButton {
+  transition: transform 0.2s ease;
+}
+
+.aButton:hover {
+  transform: scale(1.1);
+  ;
+}
+
+.aButton2 {
+  align-items: center;
+  background: linear-gradient(to right, lightblue, rgb(211, 170, 238));
+  border: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  position: relative;
+  padding-top: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 3%;
+}
+
+.aButton2:hover {
+  background: linear-gradient(to right, rgb(211, 170, 238), lightblue);
+  cursor: pointer;
+}
+
+.button {
+  align-items: center;
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  border: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: "Codec cold", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  height: 54px;
+  justify-content: center;
+  letter-spacing: .4px;
+  line-height: 1;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 3%;
+}
+
+.button:active {
+  outline: 0;
+}
+
+.button:hover {
+  outline: 0;
+}
+
+.button span {
+  transition: all 200ms;
+}
+
+.button:hover span {
+  transform: scale(.9);
+  opacity: .75;
+}
+
+@media screen and (max-width: 991px) {
+  .button {
+    font-size: 15px;
+    height: 50px;
+  }
+
+  .button span {
+    line-height: 50px;
+  }
+}
+
+.registration {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, rgb(211, 170, 238), lightblue);
+  position: relative;
+  height: fit-content;
+  height: 70vh;
+}
+
+.form {
+  width: 100%;
+  margin: auto;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"], input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc00;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-left: 1%;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.field:last-of-type {
+  margin-bottom: 30px;
+}
+
+input[type="checkbox"]+label {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .checkbox-label {
+    margin-right: 0;
+  }
+
+  .form .container {
+    width: 90%;
+  }
+
+  input[type="text"], input[type="email"] {
+    width: 90%;
+  }
+}
+
+.checkboxes {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.BWave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.BWave svg {
+  position: relative;
+  display: block;
+  width: calc(123% + 1.3px);
+  height: 126px;
+  transform: rotateY(180deg);
+}
+
+.BWave .shape-fill {
+  fill: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+  .BWave svg {
+    width: calc(123% + 1.3px);
+    height: 174px;
+  }
+}
+
+.footer {
+  height: 50px;
+  border-top: solid black 0.5px;
+}
+
+.footer h2 {
+  font-size: large;
+  font-weight: 200;
+}
