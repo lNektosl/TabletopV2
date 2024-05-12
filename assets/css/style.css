@@ -58,8 +58,7 @@ header {
   background: linear-gradient(to right, lightblue, rgb(211, 170, 238));
   position: relative;
   height: fit-content;
-  height: 70vh;
-  padding-top: 3%;
+  padding-bottom: 3vh;
 }
 
 .center {
