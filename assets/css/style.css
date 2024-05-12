@@ -39,6 +39,7 @@ body{
   background: #FFFFFF;
   margin-left: 0%;
   margin-right: 0%;
+  display: none;
 }
 
 .popUp img {
@@ -58,7 +59,8 @@ header {
   background: linear-gradient(to right, lightblue, rgb(211, 170, 238));
   position: relative;
   height: fit-content;
-  padding-bottom: 3vh;
+  padding-bottom: 6vh;
+  margin-top: -50px;
 }
 
 .center {
@@ -66,10 +68,12 @@ header {
 }
 
 header .container {
+
   justify-content: space-between;
 }
 
 header h1 {
+  padding-top: 5%;
   font-weight: 400;
 }
 
