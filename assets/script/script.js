@@ -16,3 +16,8 @@ window.addEventListener("scroll", () => {
 
   let prevScrollY = window.scrollY;
 
+
+  function switchVisibilite(el){
+    const element = document.getElementById(el);
+    element.classList.toggle("show");
+  }

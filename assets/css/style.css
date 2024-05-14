@@ -1,7 +1,8 @@
 * {
   font-family: 'Roboto', serif;
 }
-body{
+
+body {
   margin: 0 0 0 0;
 }
 
@@ -24,8 +25,10 @@ body{
   flex-wrap: wrap;
 }
 
-.s-container {
-  max-width: 900px;
+.b-container {
+  max-width: 1220px;
+  margin: auto;
+  flex-wrap: wrap;
 }
 
 .popUp {
@@ -42,7 +45,8 @@ body{
   transition: transform .5s ease;
   transform: translateY(-100%);
 }
-.show{
+
+.show {
   transform: translateY(0);
 }
 
@@ -71,25 +75,56 @@ header {
   text-align: center;
 }
 
-header .container {
-
+.space-between {
   justify-content: space-between;
+
 }
 
 header h1 {
   margin-top: 0;
   padding-top: 3%;
   font-weight: 400;
+  font-size: 3em;
+}
+
+header p {
+  font-weight: 300;
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+}
+
+.end-content {
+  font-size: .8em;
+}
+
+.end-content p:nth-child(2) {
+  margin-left: 3%;
 }
 
 p {
   font-weight: 300;
-  font-size: medium;
+  font-size: 20px;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1.5em;
+
 }
 
 .hero {
   max-width: 30%;
-  height: auto;
   object-fit: contain;
 }
 
@@ -107,6 +142,10 @@ p {
 
 .flex-container {
   display: flex;
+}
+
+.f1 {
+  flex-grow: 1;
 }
 
 .wave {
@@ -139,23 +178,47 @@ p {
 }
 
 .quote {
-  font-size: xx-large;
-  text-align: center;
-  font-weight: 400;
+  font-size: 3em;
+  font-weight: 300;
   font-style: normal;
+}
+
+.flex-column {
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 section {
   margin-top: 7vh;
   margin-right: 0;
   margin-left: 0;
+  position: relative;
+}
+
+.separator {
+  height: 50px;
+}
+
+.content {
+  padding-top: 7vh;
 }
 
 .g_image {
-  max-width: 30%;
+  max-width: 95%;
   margin-right: 3vh;
-  margin-top: 4%;
+  margin-bottom: 1vh;
 }
+
+.g_image2 {
+  max-width: 95%;
+  margin-left: 3vh;
+  margin-top: 5vh;
+}
+
+.img_container {
+  width: 100%;
+}
+
 
 .right {
   float: right;
@@ -168,7 +231,17 @@ section {
 }
 
 .g_name {
-  font-weight: 400;
+  font-weight: 300;
+  font-size: 2em;
+}
+
+.more {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.show {
+  max-height: 500vh;
 }
 
 .ICenter {
@@ -183,12 +256,13 @@ section {
 }
 
 .aButton {
+  border: transparent;
+  background-color: transparent;
   transition: transform 0.2s ease;
 }
 
 .aButton:hover {
   transform: scale(1.1);
-  ;
 }
 
 .aButton2 {
