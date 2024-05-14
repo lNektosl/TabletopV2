@@ -1,5 +1,6 @@
 * {
   font-family: 'Roboto', serif;
+  text-align: justify;
 }
 
 body {
@@ -59,7 +60,7 @@ body {
   margin-left: 5%;
 }
 
-.logos {
+.icons {
   margin-left: 10vh;
 }
 
@@ -74,9 +75,11 @@ header {
 .center {
   text-align: center;
 }
-.text-left{
+
+.text-left {
   text-align: left;
 }
+
 .space-between {
   justify-content: space-between;
 
@@ -118,6 +121,26 @@ p {
   font-weight: 300;
   font-size: 20px;
 }
+
+ul {
+  font-weight: 300;
+  font-size: 20px;
+  list-style: none;
+  padding-inline-start: 0;
+}
+li{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+li::before {
+  content: url(../images/icons/dice.png);
+  display: inline-block; 
+  margin-right: 10px;
+
+}
+
 
 h3 {
   font-weight: 400;
@@ -238,8 +261,8 @@ section {
 }
 
 .more {
-  /* max-height: 0;
-  overflow: hidden; */
+  max-height: 0;
+  overflow: hidden;
   text-align: left;
 }
 
@@ -289,6 +312,9 @@ section {
 .aButton2:hover {
   background: linear-gradient(to right, rgb(211, 170, 238), lightblue);
   cursor: pointer;
+}
+.w100{
+  width: 100%;
 }
 
 .button {
