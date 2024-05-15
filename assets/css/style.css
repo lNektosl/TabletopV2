@@ -483,9 +483,8 @@ input[type="checkbox"]+label {
 }
 .video-container{
   padding-top: 2vh;
-  height: 400px;
   padding-bottom: 2vh;
-  background-color: #f34079;
+  background-image: url(../images/brown-dice-header.jpg-nggid03800-ngg0dyn-1280x375x100-00f0w010c010r110f110r010t010.jpg);
   width: 100%;
 }
 
