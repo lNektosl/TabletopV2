@@ -21,3 +21,21 @@ window.addEventListener("scroll", () => {
     const element = document.getElementById(el);
     element.classList.toggle("show");
   }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel');
+    const track = document.querySelector('.carousel-track');
+    const items = Array.from(track.children);
+
+    function updateItems() {
+      const middleIndex = Math.floor(items.length / 2);
+
+      items.forEach((item, index) => {
+        item.classList.toggle('middle', index === middleIndex);
+      });
+    }
+
+    updateItems();
+    setInterval(updateItems, 10000); // Sync with the animation duration
+  });

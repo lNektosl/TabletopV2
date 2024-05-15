@@ -130,7 +130,8 @@ ul {
   list-style: none;
   padding-inline-start: 0;
 }
-li{
+
+li {
   display: flex;
   align-items: center;
   margin-bottom: 2%;
@@ -138,7 +139,7 @@ li{
 
 li::before {
   content: url(../images/icons/dice.png);
-  display: inline-block; 
+  display: inline-block;
   margin-right: 10px;
 
 }
@@ -315,7 +316,8 @@ section {
   background: linear-gradient(to right, rgb(211, 170, 238), lightblue);
   cursor: pointer;
 }
-.w100{
+
+.w100 {
   width: 100%;
 }
 
@@ -481,20 +483,56 @@ input[type="checkbox"]+label {
   font-size: large;
   font-weight: 200;
 }
-.video-container{
+
+.video-container {
   padding-top: 2vh;
   padding-bottom: 2vh;
   background-image: url(../images/brown-dice-header.jpg-nggid03800-ngg0dyn-1280x375x100-00f0w010c010r110f110r010t010.jpg);
+  overflow: hidden;
+  white-space: nowrap;
   width: 100%;
+  height: 300px;
+  box-sizing: border-box;
+  position: relative;
+  justify-content: center;
 }
 
-.video{
-  margin: 0 3vh 0 3vh;
+.carousel-track {
+  display: inline-flex;
+  animation: scroll 15s linear infinite;
+  height: 100%;
+}
+.track1{
+  transform: translateX(10%);
+}
+.track2{
+  margin-left: 0;
+}
+
+.video {
+  flex: 0 0 auto;
   height: 220px;
   width: 120px;
   background-color: #fff;
+  margin: 0 10px;
+  transition: transform 0.5s, height 0.5s, width 0.5s;
 }
-.video:nth-child(2){
+.video-container:hover .carousel-track{
+  animation-play-state: paused;
+}
+.video:hover {
   height: 300px;
-  width: 200px;
+  width: 180px;
+  z-index: 1;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+    /* Width of item + margin * number of items */
+  }
 }
