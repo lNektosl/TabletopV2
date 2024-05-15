@@ -9,6 +9,7 @@ body {
 
 
 .column-2 {
+  max-height: fit-content;
   width: 50%;
 }
 
@@ -120,7 +121,7 @@ header p {
 
 p {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 ul {
@@ -239,7 +240,6 @@ section {
 .g_image2 {
   max-width: 95%;
   margin-left: 3vh;
-  margin-top: 5vh;
 }
 
 .img_container {
@@ -259,7 +259,7 @@ section {
 
 .g_name {
   font-weight: 300;
-  font-size: 2em;
+  font-size: 40px;
 }
 
 .more {
@@ -480,4 +480,22 @@ input[type="checkbox"]+label {
 .footer h2 {
   font-size: large;
   font-weight: 200;
+}
+.video-container{
+  padding-top: 2vh;
+  height: 400px;
+  padding-bottom: 2vh;
+  background-color: #f34079;
+  width: 100%;
+}
+
+.video{
+  margin: 0 3vh 0 3vh;
+  height: 220px;
+  width: 120px;
+  background-color: #fff;
+}
+.video:nth-child(2){
+  height: 300px;
+  width: 200px;
 }
