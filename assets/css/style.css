@@ -28,6 +28,7 @@ body {
 
 .b-container {
   max-width: 1220px;
+  padding-top: 10vh;
   margin: auto;
   flex-wrap: wrap;
 }
@@ -149,6 +150,7 @@ h3 {
 }
 
 .hero {
+
   max-width: 35%;
   object-fit: contain;
 }
