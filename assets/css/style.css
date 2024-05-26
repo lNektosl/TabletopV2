@@ -271,6 +271,7 @@ section {
   max-height: 0;
   overflow: hidden;
   text-align: left;
+  transition: max-height 1s ease;
 }
 
 .show {
