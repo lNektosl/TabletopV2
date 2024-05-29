@@ -39,7 +39,7 @@ body {
   height: 50px;
   border-bottom: solid black 0.5px;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
   position: sticky;
   top: 0;
   background: #FFFFFF;
@@ -69,7 +69,7 @@ body {
 header {
   background: linear-gradient(to right, lightblue, rgb(211, 170, 238));
   position: relative;
-  height: fit-content;
+  height: 85dvh;
   padding-bottom: 6vh;
   margin-top: -50px;
   padding-right: 3vh;
@@ -100,17 +100,6 @@ header p {
   font-weight: 300;
   font-size: 2em;
   margin-top: 10px;
-}
-
-@media (max-width: 767px) {
-
-  header h1 {
-    font-size: 2em;
-  }
-
-  header p {
-    font-size: 1em;
-  }
 }
 
 .end-content {
@@ -165,7 +154,7 @@ h3 {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 780px) {
   .hero {
     display: none;
   }
@@ -174,6 +163,7 @@ h3 {
 .flex-container {
   display: flex;
 }
+
 
 .f1 {
   flex-grow: 1;
@@ -352,6 +342,7 @@ section {
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-top: 3%;
+  z-index: 1;
 }
 
 .button:active {
@@ -382,18 +373,21 @@ section {
   }
 }
 
+#reg{
+  margin-top: 10dvh;
+}
+
 .registration {
   margin: 0;
   padding: 0;
   background: linear-gradient(to right, rgb(211, 170, 238), lightblue);
   position: relative;
-  height: fit-content;
   height: 70vh;
 }
 
 .form {
+  margin-top: 23dvh;
   width: 100%;
-  margin: auto;
 }
 
 .field {
@@ -429,7 +423,7 @@ input[type="checkbox"]+label {
   margin-right: 15px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
 
   .checkbox-label {
     margin-right: 0;
@@ -478,6 +472,34 @@ input[type="checkbox"]+label {
   }
 }
 
+.MBWave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  display: none;
+}
+
+.MBWave svg {
+  position: relative;
+  display: block;
+  width: calc(139% + 1.3px);
+  height: 90px;
+}
+
+.MBWave .shape-fill {
+  fill: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+  .MBWave svg {
+    width: calc(197% + 1.3px);
+    height: 109px;
+  }
+}
+
 .footer {
   height: 50px;
   border-top: solid black 0.5px;
@@ -502,16 +524,19 @@ input[type="checkbox"]+label {
   position: relative;
   justify-content: center;
 }
+
 .carousel-track {
   display: inline-flex;
   animation: scroll 15s linear infinite;
   height: 100%;
   z-index: 2;
 }
-.track1{
+
+.track1 {
   transform: translateX(10%);
 }
-.track2{
+
+.track2 {
   margin-left: 0;
 }
 
@@ -524,9 +549,11 @@ input[type="checkbox"]+label {
   transition: transform 0.5s, height 0.5s, width 0.5s;
   position: relative
 }
-.video-container:hover .carousel-track{
+
+.video-container:hover .carousel-track {
   animation-play-state: paused;
 }
+
 .video:hover {
   height: 300px;
   width: 180px;
@@ -540,24 +567,28 @@ input[type="checkbox"]+label {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(0, 217, 255); /* Inherit background color from parent */
-  opacity: 0.4; /* Adjust opacity as needed */
+  background-color: rgb(0, 217, 255);
+  /* Inherit background color from parent */
+  opacity: 0.4;
+  /* Adjust opacity as needed */
 }
 
-.video-limiter{
+.video-limiter {
   width: 60%;
   overflow: hidden;
 }
+
 .video-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust opacity as needed */
 }
 
-.m10{
+.m10 {
   margin-top: 10vh;
 }
 
@@ -569,5 +600,44 @@ input[type="checkbox"]+label {
   100% {
     transform: translateX(-100%);
     /* Width of item + margin * number of items */
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .column-2 {
+    width: 100%;
+  }
+
+  header {
+    height: 95dvh;
+  }
+
+  header p {
+    text-align: center;
+    font-size: 2em;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  .BWave {
+    display: none;
+  }
+
+  .MBWave {
+    display: block;
+  }
+
+  .form{
+    margin-top: 15dvh;
+    width: 95%;
+  }
+  .registration{
+    height: 60dvh;
   }
 }
