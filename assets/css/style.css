@@ -125,7 +125,8 @@ ul {
 li {
   display: flex;
   align-items: center;
-  margin-bottom: 2%;ia
+  margin-bottom: 2%;
+  ia
 }
 
 li::before {
@@ -208,18 +209,19 @@ h3 {
 }
 
 @media (max-width: 800px) {
-  
-  .wave{
+
+  .wave {
     display: none;
   }
-  .MWave{
+
+  .MWave {
     display: block;
   }
 
   .MWave svg {
-      width: calc(164% + 1.3px);
-      height: 86px;
-      display: block;
+    width: calc(164% + 1.3px);
+    height: 86px;
+    display: block;
   }
 }
 
@@ -700,15 +702,23 @@ input[type="checkbox"]+label {
   .video-container:active .carousel-track {
     animation-play-state: paused;
   }
-  .video:nth-child(2){
+
+  .video:nth-child(2) {
     background-color: #333;
   }
+
   .video:active {
     height: 250px;
     aspect-ratio: 16/9;
     z-index: 1;
   }
-.checkboxes{
-  display: block;
-}
+
+  .checkboxes {
+    display: block;
+  }
+
+  .g_image, .g_image2 {
+    margin: auto;
+    max-width: 100%;
+  }
 }
