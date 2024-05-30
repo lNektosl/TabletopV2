@@ -126,14 +126,12 @@ li {
   display: flex;
   align-items: center;
   margin-bottom: 2%;
-  ia
 }
 
 li::before {
   content: url(../images/icons/dice.png);
   display: inline-block;
   margin-right: 10px;
-
 }
 
 
@@ -320,7 +318,9 @@ section {
 
 .aButton2 {
   align-items: center;
-  background: linear-gradient(to right, lightblue, rgb(211, 170, 238));
+  background-image: linear-gradient(to right, lightblue, rgb(211, 170, 238), lightblue);
+  background-size: 200%, 100%;
+  background-position: left;
   border: 0;
   box-sizing: border-box;
   border-radius: 10px;
@@ -333,10 +333,12 @@ section {
   font-weight: 700;
   font-size: 16px;
   margin-top: 3%;
+  transition: background-position 0.5s ease
 }
 
-.aButton2:hover {
-  background: linear-gradient(to right, rgb(211, 170, 238), lightblue);
+.aButton2:hover,
+.aButton2:focus {
+  background-position: right;
   cursor: pointer;
 }
 
