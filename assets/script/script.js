@@ -23,19 +23,40 @@ window.addEventListener("scroll", () => {
   }
 
 
-    document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel');
-    const track = document.querySelector('.carousel-track');
-    const items = Array.from(track.children);
-
-    function updateItems() {
-      const middleIndex = Math.floor(items.length / 2);
-
-      items.forEach((item, index) => {
-        item.classList.toggle('middle', index === middleIndex);
+  function scrollContainer(containerId, direction) {
+    const container = document.getElementById(containerId);
+    const scrollAmount = container.clientWidth
+  
+    if (direction === 'prev') {
+      container.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    } else if (direction === 'next') {
+      container.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
       });
     }
+setTimeout(() => {
+  buttonCheck(container);
+}, 500);
+    
+  };
 
-    updateItems();
-    setInterval(updateItems, 10000); // Sync with the animation duration
-  });
+  function buttonCheck(container){
+    const prevButton = container.previousElementSibling;
+    const nextButton = container.nextElementSibling;
+
+    if (container.scrollLeft <= 0) {
+      prevButton.style.display = 'none'; // Скрываем кнопку "назад"
+  } else {
+      prevButton.style.display = 'block'; // Показываем кнопку "назад"
+  }
+
+  if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+      nextButton.style.display = 'none'; // Скрываем кнопку "вперед"
+  } else {
+      nextButton.style.display = 'block'; // Показываем кнопку "вперед"
+  }
+  }

@@ -542,15 +542,14 @@ input[type="checkbox"]+label {
 }
 
 .video-container {
-  padding-top: 2vh;
-  padding-bottom: 2vh;
   background-image: url(../images/separator/separator.jpeg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
   height: 35vh;
+  min-height: 300px;
   box-sizing: border-box;
   position: relative;
   justify-content: center;
@@ -558,37 +557,25 @@ input[type="checkbox"]+label {
 
 .carousel-track {
   display: inline-flex;
-  animation: scroll 15s linear infinite;
-  height: 100%;
-  z-index: 2;
-}
-
-.track1 {
-  transform: translateX(10%);
-}
-
-.track2 {
-  margin-left: 0;
+  gap: 18px;
+  padding-left: 50px;
+  padding-right: 10px;
+  transition: transform 0.5s;
 }
 
 .video {
   flex: 0 0 auto;
-  height: 220px;
-  width: 120px;
+  height: 300px;
+  aspect-ratio: 9/16;
   background-color: #fff;
   margin: 0 10px;
   transition: transform 0.5s, height 0.5s, width 0.5s;
-  position: relative
+  position: relative;
+  object-fit: cover;
 }
 
 .video-container:hover .carousel-track {
   animation-play-state: paused;
-}
-
-.video:hover {
-  height: 300px;
-  width: 180px;
-  z-index: 1;
 }
 
 .video-container::before {
@@ -604,20 +591,44 @@ input[type="checkbox"]+label {
 
 .video-limiter {
   width: 60%;
-  overflow: hidden;
+  overflow-x: auto;
+  box-sizing: border-box;
+  scrollbar-width: none;
+  display: flex;
 }
 
-.video-overlay {
+.slide-button{
+  height: 40px;
+  width: 40px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background: #000;
+  font-size: 2.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 1;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+}
+.slide-button.hidden{
+  display: none;
+}
+.next{
+  right: 18%;
+}
+.prev{
+  left: 18%;
 }
 
 .m10 {
   margin-top: 10vh;
+}
+.ml10{
+  margin-left: 10px;
+}
+.mr10{
+  margin-right: 10px;
 }
 
 @keyframes scroll {
@@ -627,13 +638,16 @@ input[type="checkbox"]+label {
 
   100% {
     transform: translateX(-100%);
-    /* Width of item + margin * number of items */
   }
 }
 
 @media screen and (max-width: 800px) {
   .flex-container {
     flex-direction: column;
+  }
+
+  .slide-button{
+    visibility: hidden;
   }
 
   .column-2 {
@@ -666,53 +680,15 @@ input[type="checkbox"]+label {
     width: 95%;
   }
 
-
-  .video-container {
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    background-image: url(../images/separator/separator.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    position: relative;
-    justify-content: center;
+  .video-limiter {
+    width: 95%;
   }
-
-  .carousel-track {
-    animation: scroll 15s linear infinite;
-    z-index: 2;
-  }
-
-  .track1, .track2 {
-    transform: none;
-    margin: 0;
+  .carousel-track{
+    gap: 2px;
   }
 
   .video {
-    height: 200px;
-    aspect-ratio: 16/9;
-    background-color: #fff;
-    margin: 5px;
-    transition: transform 0.5s, height 0.5s, width 0.5s;
-    position: relative;
-  }
-
-  .video-container:active .carousel-track {
-    animation-play-state: paused;
-  }
-
-  .video:nth-child(2) {
-    background-color: #333;
-  }
-
-  .video:active {
-    height: 250px;
-    aspect-ratio: 16/9;
-    z-index: 1;
+    height: 225px;
   }
 
   .checkboxes {
