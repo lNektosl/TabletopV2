@@ -18,6 +18,7 @@
     <link rel="preload" href="assets/images/icons/telegram.png" as="image">
     <link rel="preload" href="assets/images/icons/whatsapp.png" as="image">
     <script src="assets/script/script.js" defer></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -300,7 +301,7 @@
                 </label>
             </div>
             <div class="ICenter">
-                <button class="button">Отправить</button>
+                <button onclick="sendMail()" class="button">Отправить</button>
             </div>
 
             <div class="MBWave">

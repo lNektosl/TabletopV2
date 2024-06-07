@@ -1,7 +1,39 @@
 var popup;
 document.addEventListener("DOMContentLoaded", () => {
   popup = document.getElementById("popUp");
+
+  emailjs.init("0__CYpWZ5VcRaQyr4");
 });
+
+function sendMail(){
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var games = [];
+  
+  if (document.getElementById("g1").checked) {
+      games.push("Эгоист/Эгоистка");
+  }
+  if (document.getElementById("g2").checked) {
+      games.push("Долина хранительниц женской души");
+  }
+  if (document.getElementById("g3").checked) {
+      games.push("NetWorker");
+  }
+  
+  var params = {
+      from_name: name,
+      email: email,
+      games: games.join(", ") // Преобразуем массив в строку, разделенную запятыми
+  };
+  emailjs.send("service_4rlwjy9","template_rvlmjhh",params).then(function(response) {
+     console.log("Письмо успешно отправлено!", response);
+     alert("Ваше сообщение успешно отправлено!");
+ }, function(error) {
+     console.error("Ошибка отправки письма:", error);
+     alert("Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.");
+ });}
+
+
 
 window.addEventListener("scroll", () => {
   const scrolledUp = window.scrollY < prevScrollY;
