@@ -39,7 +39,7 @@ body {
   height: 50px;
   border-bottom: solid black 0.5px;
   align-items: center;
-  z-index: 2;
+  z-index: 5;
   position: sticky;
   top: 0;
   background: #FFFFFF;
@@ -548,7 +548,7 @@ input[type="checkbox"]+label {
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
-  height: 35vh;
+  height: 50vh;
   min-height: 300px;
   box-sizing: border-box;
   position: relative;
@@ -558,15 +558,15 @@ input[type="checkbox"]+label {
 .carousel-track {
   display: inline-flex;
   gap: 18px;
-  padding-left: 50px;
+  padding-left: 10px;
   padding-right: 10px;
   transition: transform 0.5s;
 }
 
 .video {
   flex: 0 0 auto;
-  height: 300px;
-  aspect-ratio: 9/16;
+  height: 215px;
+  width: 325px;
   background-color: #fff;
   margin: 0 10px;
   transition: transform 0.5s, height 0.5s, width 0.5s;
@@ -597,7 +597,7 @@ input[type="checkbox"]+label {
   display: flex;
 }
 
-.slide-button{
+.slide-button {
   height: 40px;
   width: 40px;
   color: #fff;
@@ -611,26 +611,67 @@ input[type="checkbox"]+label {
   z-index: 1;
   position: absolute;
 }
-.slide-button.hidden{
+
+.slide-button.hidden {
   display: none;
 }
-.next{
+
+.next {
   right: 18%;
 }
-.prev{
+
+.prev {
   left: 18%;
 }
 
 .m10 {
   margin-top: 10vh;
 }
-.ml10{
+
+.ml10 {
   margin-left: 10px;
 }
-.mr10{
+
+.mr10 {
   margin-right: 10px;
 }
 
+#video-section {
+  position: relative;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.overlay iframe {
+  width: 80%;
+  height: 80%;
+  width: 800px;
+  height: 450px;
+}
+
+.Vcenter iframe{
+  z-index: 4;
+  position: absolute;
+  height: 50%;
+  margin: auto;
+  height: 800px;
+  width: 450px;
+}
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -646,7 +687,7 @@ input[type="checkbox"]+label {
     flex-direction: column;
   }
 
-  .slide-button{
+  .slide-button {
     visibility: hidden;
   }
 
@@ -683,7 +724,8 @@ input[type="checkbox"]+label {
   .video-limiter {
     width: 95%;
   }
-  .carousel-track{
+
+  .carousel-track {
     gap: 2px;
   }
 
