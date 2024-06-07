@@ -69,6 +69,7 @@ body {
 header {
   background: linear-gradient(to right, lightblue, rgb(211, 170, 238));
   position: relative;
+  min-height: 800px;
   height: 85dvh;
   padding-bottom: 6vh;
   margin-top: -50px;
@@ -413,11 +414,12 @@ section {
   padding: 0;
   background: linear-gradient(to right, rgb(211, 170, 238), lightblue);
   position: relative;
+  min-height: 600px;
   height: 70vh;
 }
 
 .form {
-  margin-top: 23dvh;
+  margin-top: 15%;
   width: 100%;
 }
 
@@ -693,10 +695,6 @@ input[type="checkbox"]+label {
 
   .column-2 {
     width: 100%;
-  }
-
-  header {
-    height: 95dvh;
   }
 
   header p {
