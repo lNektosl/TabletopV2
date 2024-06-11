@@ -25,9 +25,7 @@
     <div id="popUp" class="popUp show">
         <h2>Elena Mironova</h2>
         <div class="icons">
-            <img src="assets/images/icons/facebook.png" alt="">
-            <img src="assets/images/icons/telegram.png" alt="">
-            <img src="assets/images/icons/whatsapp.png" alt="">
+            <a href="https://t.me/CharmeEllen"><img src="assets/images/icons/telegram.png" alt=""></a>
         </div>
     </div>
 
@@ -46,7 +44,7 @@
                         <p> <span class="highlight">очно</span> и <span class="highlight">онлайн</span></p>
                     </div>
                     <div class="ICenter">
-                        <a href="#reg" class="button">Регистрация</a>
+                        <a onclick="ScrollToReg()" class="button">Регистрация</a>
                     </div>
                 </div>
             </div>
@@ -118,14 +116,8 @@
             class="slide-button material-symbols-rounded mr10 prev">chevron_left</button>
         <div id="video-limiter1" class="video-limiter">
 
-            <div class="carousel-track ">
-                <div class="video"></div>
-                <div class="video"></div>
-                <div class="video"></div>
-                <div class="video"></div>
-                <div class="video"></div>
-                <div class="video"></div>
-                <div class="video"></div>
+            <div id="carousel-track1" class="carousel-track ">
+
             </div>
 
         </div>
@@ -181,14 +173,8 @@
             class="slide-button material-symbols-rounded mr10 prev">chevron_left</button>
         <div id="video-limiter2" class="video-limiter">
 
-            <div class="carousel-track ">
-                <div class="video"></div>
-                <div class="video"></div>
-                <div class="video"></div>
-                <div class="video"></div>
-                <div class="video"></div>
-                <div class="video"></div>
-                <div class="video"></div>
+            <div id="carousel-track2" class="carousel-track ">
+
             </div>
 
         </div>
@@ -254,16 +240,15 @@
         </div>
     </section>
 
-    <section  class="video-container flex-container ICenter">
+    <section class="video-container flex-container ICenter">
         <button id="prev3" onclick="scrollContainer('video-limiter3','prev')"
             class="slide-button material-symbols-rounded mr10 prev">chevron_left</button>
         <div id="video-limiter3" class="video-limiter">
-
-            <div id="video-container" class="carousel-track ">
-                <div class="video">
-
-                </div>
+            <!-- Контейнер для видео -->
+            <div id="carousel-track3" class="carousel-track">
+                <!-- Видео добавляются сюда -->
             </div>
+        </div>
 
         </div>
         <button id="next3" onclick="scrollContainer('video-limiter3','next')"
