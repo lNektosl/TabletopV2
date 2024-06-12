@@ -3,10 +3,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   popup = document.getElementById("popUp");
   emailjs.init("0__CYpWZ5VcRaQyr4");
 
- await loadVideos('carousel-track1', 'PL0EWiZIxqKsPg0o38WYlOz98RAtXl10vz');
- await loadVideos('carousel-track2', 'PL0EWiZIxqKsOLB59zXixFXnLXowWT4GC1');
+  //Эгоистка
+  await loadVideos('carousel-track1', 'PL0EWiZIxqKsPg0o38WYlOz98RAtXl10vz');
+  //Долина
+  await loadVideos('carousel-track2', 'PL0EWiZIxqKsOLB59zXixFXnLXowWT4GC1');
+  //Networker
+  await loadVideos('carousel-track3', 'PL0EWiZIxqKsOBZF1_dYxblm5xjdWSVIaf');
 
-  
+
 
   var continers = document.getElementsByClassName("video-limiter");
   Array.from(continers).forEach(continer => {
@@ -42,7 +46,7 @@ function sendMail() {
       alert("Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.");
     });
   }
-  else{
+  else {
     alert("Пожалуйста заполните поля");
   }
 }
@@ -164,9 +168,9 @@ function showOverlay(videoId) {
   overlay.classList.add('active');
 }
 
-function ScrollToReg(){
-  
-  document.querySelector('#reg').scrollIntoView({behavior:'smooth'});
+function ScrollToReg() {
+
+  document.querySelector('#reg').scrollIntoView({ behavior: 'smooth' });
 }
 
 
