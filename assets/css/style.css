@@ -570,8 +570,6 @@ input[type="checkbox"]+label {
   flex: 0 0 auto;
   height: 215px;
   width: 325px;
-  background-color: #fff;
-
   transition: transform 0.5s, height 0.5s, width 0.5s;
   position: relative;
   object-fit: cover;
