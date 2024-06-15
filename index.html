@@ -14,9 +14,7 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="preload" href="assets/images/icons/facebook.png" as="image">
     <link rel="preload" href="assets/images/icons/telegram.png" as="image">
-    <link rel="preload" href="assets/images/icons/whatsapp.png" as="image">
     <script src="assets/script/script.js" defer></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
@@ -112,16 +110,18 @@
     </section>
 
     <section class="video-container flex-container ICenter">
-        <button id="prev1" onclick="scrollContainer('video-limiter1','prev')"
+        <button id="prev1" onclick="scrollContainer('carousel-track1','prev')"
             class="slide-button material-symbols-rounded mr10 prev">chevron_left</button>
-        <div id="video-limiter1" class="video-limiter">
-
-            <div id="carousel-track1" class="carousel-track ">
-
+        <div class="video-limiter" onselectstart="return false">
+            <div id="carousel-track1" class="carousel-track">
             </div>
-
+            <div class="slider-scrollbar">
+                <div class="scrollbar-track">
+                    <div class="scrollbar-thumb"></div>
+                </div>
+            </div>
         </div>
-        <button id="next1" onclick="scrollContainer('video-limiter1','next')"
+        <button id="next1" onclick="scrollContainer('carousel-track1','next')"
             class="slide-button material-symbols-rounded ml10 next">chevron_right</button>
     </section>
 
@@ -171,10 +171,15 @@
     <section class="video-container flex-container ICenter">
         <button id="prev2" onclick="scrollContainer('video-limiter2','prev')"
             class="slide-button material-symbols-rounded mr10 prev">chevron_left</button>
-        <div id="video-limiter2" class="video-limiter">
+        <div id="video-limiter2" class="video-limiter" onselectstart="return false">
 
             <div id="carousel-track2" class="carousel-track ">
 
+            </div>
+            <div class="slider-scrollbar">
+                <div class="scrollbar-track">
+                    <div class="scrollbar-thumb"></div>
+                </div>
             </div>
 
         </div>
@@ -243,10 +248,16 @@
     <section class="video-container flex-container ICenter">
         <button id="prev3" onclick="scrollContainer('video-limiter3','prev')"
             class="slide-button material-symbols-rounded mr10 prev">chevron_left</button>
-        <div id="video-limiter3" class="video-limiter">
+        <div id="video-limiter3" class="video-limiter" onselectstart="return false">
             <!-- Контейнер для видео -->
             <div id="carousel-track3" class="carousel-track">
                 <!-- Видео добавляются сюда -->
+            </div>
+
+            <div class="slider-scrollbar">
+                <div class="scrollbar-track">
+                    <div class="scrollbar-thumb"></div>
+                </div>
             </div>
         </div>
 
@@ -261,12 +272,12 @@
 
             <div class="field">
                 <label for="name">Имя:</label>
-                <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+                <input type="text" id="name" name="name" placeholder="Введите ваше имя" required autocomplete="name">
             </div>
 
             <div class="field">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+                <input type="email" id="email" name="email" placeholder="Введите ваш email" required autocomplete="email">
             </div>
 
             <div class="checkboxes">

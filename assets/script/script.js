@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-  var continers = document.getElementsByClassName("video-limiter");
+  var continers = document.getElementsByClassName("carousel-track");
   Array.from(continers).forEach(continer => {
     buttonCheck(continer);
   })
@@ -88,15 +88,66 @@ function scrollContainer(containerId, direction) {
       behavior: 'smooth'
     });
   }
-
-  setTimeout(() => {
-    buttonCheck(container);
-  }, 600);
 };
 
+var containers = document.getElementsByClassName("carousel-track");
+Array.from(containers).forEach(container => {
+  container.addEventListener("scroll", () => {
+    buttonCheck(container);
+    updateScrollThumbPosition(container);
+  });
+});
+
+//handle scrollbar drug
+var thumbs = document.getElementsByClassName("scrollbar-thumb");
+Array.from(thumbs).forEach(thumb =>{
+  thumb.addEventListener("mousedown", (e) =>{
+    const startX = e.clientX;
+    const thumbPosition = thumb.offsetLeft;
+
+    //update scrollbarThumb position
+    const handleMouseMove = (e) =>{
+      e.preventDefault();
+
+      const deltaX = e.clientX - startX;
+      const newThumbPosition = thumbPosition + deltaX;
+      const sliderScrollbar = thumb.parentElement.parentElement;
+      const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - thumb.offsetWidth;
+
+      const carouselTrack = thumb.closest('.video-container').querySelector('.carousel-track');
+      const maxScrollLeft = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+      const boundedPosition = Math.max(0,Math.min(maxThumbPosition,newThumbPosition));
+      const scrollPosition =(boundedPosition/maxThumbPosition)*maxScrollLeft;
+
+      thumb.style.left = `${boundedPosition}px`;
+
+      carouselTrack.scrollLeft = scrollPosition;
+    }
+
+    const handleMouseUp = () =>{
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);  
+    }
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+  });
+});
+
+function updateScrollThumbPosition(container) {
+  const scrollPosition = container.scrollLeft;
+  const maxScrollLeft = container.scrollWidth - container.clientWidth;
+  const limiter = container.parentElement;
+  const scrollbarThumb = limiter.querySelector(".scrollbar-thumb");
+  const sliderScrollbar = limiter.querySelector(".slider-scrollbar");
+  const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+  scrollbarThumb.style.left = `${thumbPosition}px`;
+}
+
 function buttonCheck(container) {
-  const prevButton = container.previousElementSibling;
-  const nextButton = container.nextElementSibling;
+  const limiter = container.parentElement;
+  const prevButton = limiter.previousElementSibling;
+  const nextButton = limiter.nextElementSibling;
   if (container.scrollLeft <= 0) {
     prevButton.style.display = 'none'; // Скрываем кнопку "назад"
   } else {
@@ -111,10 +162,11 @@ function buttonCheck(container) {
 }
 
 
-const apiKey = "AIzaSyD6BNAufMQra7YPJH6HdaTnkKLbothsoG8";
-const chanelId = "UCK1Z9PQXRZO-n5Fv7LEHPLw";
+
 
 async function fetchVideos(playlistId) {
+  const apiKey = "AIzaSyD6BNAufMQra7YPJH6HdaTnkKLbothsoG8";
+
   const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&part=snippet&maxResults=50&playlistId=${playlistId}&key=${apiKey}`;
   const response = await fetch(url);
   const data = await response.json();
@@ -122,6 +174,7 @@ async function fetchVideos(playlistId) {
 }
 
 async function loadVideos(containerId, playlistId) {
+
   let nextPageToken = '';
   const videoContainer = document.getElementById(containerId);
 
@@ -141,32 +194,13 @@ async function loadVideos(containerId, playlistId) {
       iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       iframe.allowFullscreen = true;
       videoDiv.appendChild(iframe);
-
       videoContainer.appendChild(videoDiv);
 
-      videoDiv.addEventListener('click', () => {
-        showOverlay(videoId);
-      });
     });
     nextPageToken = data.nextPageToken;
   } while (nextPageToken);
 }
 
-function showOverlay(videoId) {
-  let overlay = document.querySelector('.overlay');
-  if (!overlay) {
-    overlay = document.createElement('div');
-    overlay.classList.add('overlay');
-    document.body.appendChild(overlay);
-
-    overlay.addEventListener('click', () => {
-      overlay.classList.remove('active');
-    });
-  }
-
-  overlay.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-  overlay.classList.add('active');
-}
 
 function ScrollToReg() {
 
