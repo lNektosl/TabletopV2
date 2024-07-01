@@ -1,2 +1,10 @@
-[[plugins]]
-  package = "netlify-plugin-inline-functions-env"
+[build]
+  publish = "dist"
+  command = "your-build-command"
+
+[functions]
+  directory = "netlify/functions"
+
+[context.production.environment]
+  YOUTUBE_APIKEY = "your_api_key_here"
+  JSEMAIL_APIKEY = "your_jsemail_api_key_here"
