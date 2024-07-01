@@ -1,5 +1,6 @@
 * {
   font-family: 'Roboto', serif;
+  text-align: justify;
 }
 
 body {
@@ -8,6 +9,7 @@ body {
 
 
 .column-2 {
+  max-height: fit-content;
   width: 50%;
 }
 
@@ -27,6 +29,7 @@ body {
 
 .b-container {
   max-width: 1220px;
+  padding-top: 10vh;
   margin: auto;
   flex-wrap: wrap;
 }
@@ -36,7 +39,7 @@ body {
   height: 50px;
   border-bottom: solid black 0.5px;
   align-items: center;
-  z-index: 1;
+  z-index: 5;
   position: sticky;
   top: 0;
   background: #FFFFFF;
@@ -59,20 +62,27 @@ body {
   margin-left: 5%;
 }
 
-.logos {
+.icons {
   margin-left: 10vh;
 }
 
 header {
   background: linear-gradient(to right, lightblue, rgb(211, 170, 238));
   position: relative;
-  height: fit-content;
+  min-height: 800px;
+  height: 85dvh;
   padding-bottom: 6vh;
   margin-top: -50px;
+  padding-right: 3vh;
+  padding-left: 3vh;
 }
 
 .center {
   text-align: center;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .space-between {
@@ -93,17 +103,6 @@ header p {
   margin-top: 10px;
 }
 
-@media (max-width: 767px) {
-
-  header h1 {
-    font-size: 2em;
-  }
-
-  header p {
-    font-size: 1em;
-  }
-}
-
 .end-content {
   font-size: .8em;
 }
@@ -114,27 +113,42 @@ header p {
 
 p {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 25px;
 }
+
+ul {
+  font-weight: 300;
+  font-size: 20px;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+li::before {
+  content: url(../images/icons/dice.png);
+  display: inline-block;
+  margin-right: 10px;
+}
+
 
 h3 {
   font-weight: 400;
   font-size: 1.5em;
-
+  text-align: center;
 }
 
 .hero {
-  max-width: 30%;
+
+  max-width: 45%;
   object-fit: contain;
 }
 
-@media (min-width: 768px) {
-  .hero {
-    display: block;
-  }
-}
-
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .hero {
     display: none;
   }
@@ -143,6 +157,7 @@ h3 {
 .flex-container {
   display: flex;
 }
+
 
 .f1 {
   flex-grow: 1;
@@ -170,12 +185,46 @@ h3 {
   fill: #FFFFFF;
 }
 
-@media (max-width: 767px) {
-  .wave svg {
-    width: calc(160% + 1.3px);
-    height: 174px;
+
+.MWave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  display: none;
+}
+
+.MWave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.MWave .shape-fill {
+  fill: #FFFFFF;
+}
+
+@media (max-width: 800px) {
+
+  .wave {
+    display: none;
+  }
+
+  .MWave {
+    display: block;
+  }
+
+  .MWave svg {
+    width: calc(164% + 1.3px);
+    height: 86px;
+    display: block;
   }
 }
+
+
 
 .quote {
   font-size: 3em;
@@ -192,6 +241,8 @@ section {
   margin-top: 7vh;
   margin-right: 0;
   margin-left: 0;
+  padding-left: 3vh;
+  padding-right: 3vh;
   position: relative;
 }
 
@@ -212,7 +263,6 @@ section {
 .g_image2 {
   max-width: 95%;
   margin-left: 3vh;
-  margin-top: 5vh;
 }
 
 .img_container {
@@ -232,12 +282,14 @@ section {
 
 .g_name {
   font-weight: 300;
-  font-size: 2em;
+  font-size: 40px;
 }
 
 .more {
   max-height: 0;
   overflow: hidden;
+  text-align: left;
+  transition: max-height 1s ease;
 }
 
 .show {
@@ -267,7 +319,9 @@ section {
 
 .aButton2 {
   align-items: center;
-  background: linear-gradient(to right, lightblue, rgb(211, 170, 238));
+  background-image: linear-gradient(to right, lightblue, rgb(211, 170, 238), lightblue);
+  background-size: 200%, 100%;
+  background-position: left;
   border: 0;
   box-sizing: border-box;
   border-radius: 10px;
@@ -280,11 +334,17 @@ section {
   font-weight: 700;
   font-size: 16px;
   margin-top: 3%;
+  transition: background-position 0.5s ease
 }
 
-.aButton2:hover {
-  background: linear-gradient(to right, rgb(211, 170, 238), lightblue);
+.aButton2:hover,
+.aButton2:focus {
+  background-position: right;
   cursor: pointer;
+}
+
+.w100 {
+  width: 100%;
 }
 
 .button {
@@ -314,6 +374,7 @@ section {
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-top: 3%;
+  z-index: 1;
 }
 
 .button:active {
@@ -333,7 +394,7 @@ section {
   opacity: .75;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 800px) {
   .button {
     font-size: 15px;
     height: 50px;
@@ -344,18 +405,22 @@ section {
   }
 }
 
+#reg {
+  margin-top: 10dvh;
+}
+
 .registration {
   margin: 0;
   padding: 0;
   background: linear-gradient(to right, rgb(211, 170, 238), lightblue);
   position: relative;
-  height: fit-content;
+  min-height: 600px;
   height: 70vh;
 }
 
 .form {
+  padding-top: 9%;
   width: 100%;
-  margin: auto;
 }
 
 .field {
@@ -369,7 +434,7 @@ label {
 }
 
 input[type="text"], input[type="email"] {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   border: 1px solid #cccccc00;
   border-radius: 5px;
@@ -391,7 +456,7 @@ input[type="checkbox"]+label {
   margin-right: 15px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
 
   .checkbox-label {
     margin-right: 0;
@@ -433,10 +498,38 @@ input[type="checkbox"]+label {
   fill: #FFFFFF;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .BWave svg {
     width: calc(123% + 1.3px);
     height: 174px;
+  }
+}
+
+.MBWave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  display: none;
+}
+
+.MBWave svg {
+  position: relative;
+  display: block;
+  width: calc(139% + 1.3px);
+  height: 90px;
+}
+
+.MBWave .shape-fill {
+  fill: #FFFFFF;
+}
+
+@media (max-width: 800px) {
+  .MBWave svg {
+    width: calc(197% + 1.3px);
+    height: 109px;
   }
 }
 
@@ -448,4 +541,216 @@ input[type="checkbox"]+label {
 .footer h2 {
   font-size: large;
   font-weight: 200;
+}
+
+.video-container {
+  background-image: url(../images/separator/separator.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  height: 40vh;
+  min-height: 300px;
+  box-sizing: border-box;
+  position: relative;
+  justify-content: center;
+}
+
+.carousel-track {
+  display: inline-flex;
+  overflow-x: auto;
+  box-sizing: border-box;
+  scrollbar-width: none;
+  width: 100%;
+  gap: 18px;
+}
+
+.video {
+  flex: 0 0 auto;
+  height: 215px;
+  width: 325px;
+  transition: transform 0.5s, height 0.5s, width 0.5s;
+  position: relative;
+  object-fit: cover;
+}
+
+.video-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 217, 255);
+  opacity: 0.4;
+}
+
+.video-limiter {
+  width: 65%;
+}
+
+.slide-button {
+  height: 40px;
+  width: 40px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background: #000;
+  font-size: 2.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 1;
+  position: absolute;
+}
+
+.slide-button.hidden {
+  display: none;
+}
+
+.next {
+  right: 15%;
+}
+
+.prev {
+  left: 15%;
+}
+
+.slider-scrollbar {
+  width: 100%;
+  height: 24px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.scrollbar-track {
+  height: 4px;
+  width: 100%;
+  background: #ccc;
+  position: relative;
+  border-radius: 4px;
+}
+.slider-scrollbar:hover .scrollbar-track{
+  height: 6px;
+}
+
+.scrollbar-thumb {
+  height: 100%;
+  width: 50%;
+  background: #000;
+  position: absolute;
+  border-radius: inherit;
+  cursor: grab;
+}
+.slider-scrollbar .scrollbar-thumb:active{
+cursor: grabbing;
+height: 8px;
+top: -1px;
+}
+.scrollbar-thumb ::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+  top: -20px;
+}
+
+.m10 {
+  margin-top: 10vh;
+}
+
+.ml10 {
+  margin-left: 10px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+#video-section {
+  position: relative;
+}
+
+
+
+.m10 {
+  margin-top: 10vh;
+}
+
+.ml10 {
+  margin-left: 10px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+#video-section {
+  position: relative;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .slide-button {
+    visibility: hidden;
+  }
+
+  .column-2 {
+    width: 100%;
+  }
+
+  header p {
+    text-align: center;
+    font-size: 1.3em;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  .BWave {
+    display: none;
+  }
+
+  .MBWave {
+    display: block;
+  }
+
+  .form {
+    margin-top: 15dvh;
+    width: 95%;
+  }
+
+  .video-limiter {
+    width: 95%;
+  }
+
+
+  .video {
+    height: 225px;
+  }
+
+  .checkboxes {
+    display: block;
+  }
+
+  .g_image, .g_image2 {
+    margin: auto;
+    max-width: 100%;
+  }
 }
