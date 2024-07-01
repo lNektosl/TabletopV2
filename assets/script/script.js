@@ -177,6 +177,8 @@ function buttonCheck(container) {
 async function fetchVideos(playlistId) {
   const apiKey = window.env.YOUTUBE_APIKEY;
 
+  console.log(apiKey);
+
   const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&part=snippet&maxResults=50&playlistId=${playlistId}&key=${apiKey}`;
   const response = await fetch(url);
   const data = await response.json();
