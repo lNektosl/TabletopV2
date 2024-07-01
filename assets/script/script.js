@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   await fetchEnvVariables();
   
   popup = document.getElementById("popUp");
-  emailjs.init(window.env.JSEMAIL_APIKEY);
+  emailjs.init("1lIPR95oI0b2IU7jO");
 
   //Эгоистка
   await loadVideos('carousel-track1', 'PL0EWiZIxqKsPg0o38WYlOz98RAtXl10vz');
