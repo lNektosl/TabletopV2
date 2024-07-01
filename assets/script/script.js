@@ -22,6 +22,7 @@ function sendMail() {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   var games = [];
+  const apiKey = window.env.JSEMAIL_APIKEY
 
   if (document.getElementById("g1").checked) {
     games.push("Эгоист/Эгоистка");
@@ -38,7 +39,7 @@ function sendMail() {
       email: email,
       games: games.join(", ")
     };
-    emailjs.send("service_4rlwjy9", "template_rvlmjhh", params).then(function (response) {
+    emailjs.send(apiKey, "template_rvlmjhh", params).then(function (response) {
       console.log("Письмо успешно отправлено!", response);
       alert("Ваше сообщение успешно отправлено!");
     }, function (error) {
@@ -165,7 +166,7 @@ function buttonCheck(container) {
 
 
 async function fetchVideos(playlistId) {
-  const apiKey = "AIzaSyD6BNAufMQra7YPJH6HdaTnkKLbothsoG8";
+  const apiKey = window.env.YOUTUBE_APIKEY;
 
   const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&part=snippet&maxResults=50&playlistId=${playlistId}&key=${apiKey}`;
   const response = await fetch(url);
