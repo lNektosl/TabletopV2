@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   await fetchEnvVariables();
   
   popup = document.getElementById("popUp");
-  emailjs.init("0__CYpWZ5VcRaQyr4");
+  emailjs.init(window.env.JSEMAIL_APIKEY);
 
   //Эгоистка
   await loadVideos('carousel-track1', 'PL0EWiZIxqKsPg0o38WYlOz98RAtXl10vz');
@@ -31,7 +31,7 @@ function sendMail() {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   var games = [];
-  const apiKey = window.env.JSEMAIL_APIKEY
+  const apiKey = window.env.JSEMAIL_SERVICE_KEY
 
   if (document.getElementById("g1").checked) {
     games.push("Эгоист/Эгоистка");
