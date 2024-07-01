@@ -31,7 +31,7 @@ function sendMail() {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   var games = [];
-  const apiKey = window.env.JSEMAIL_SERVICE_KEY
+  const apiKey = window.env.JSEMAIL_SERVICE_KEY;
 
   if (document.getElementById("g1").checked) {
     games.push("Эгоист/Эгоистка");
