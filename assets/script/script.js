@@ -1,5 +1,8 @@
 var popup;
 document.addEventListener("DOMContentLoaded", async () => {
+
+  await fetchEnvVariables();
+  
   popup = document.getElementById("popUp");
   emailjs.init("0__CYpWZ5VcRaQyr4");
 
@@ -17,6 +20,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     buttonCheck(continer);
   })
 });
+
+async function fetchEnvVariables() {
+  const response = await fetch('/.netlify/functions/getEnvVariables');
+  const env = await response.json();
+  window.env = env;
+}
 
 function sendMail() {
   var name = document.getElementById("name").value;
