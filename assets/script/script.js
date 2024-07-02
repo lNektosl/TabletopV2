@@ -199,7 +199,7 @@ async function loadVideos(containerId, playlistId) {
       const iframe = document.createElement('iframe');
       iframe.width = "325";
       iframe.height = "215";
-      iframe.src = `https://www.youtube.com/embed/${videoId}?modestbranding=1`;
+      iframe.src = `https://www.youtube.com/embed/${videoId}?showinfo=0`;
       iframe.frameBorder = "0";
       iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       iframe.allowFullscreen = true;
