@@ -1,1 +1,1 @@
- To see and interact with web site use link https://psygames.netlify.app/
+ To see and interact with the website, use the link https://psygames.netlify.app/
