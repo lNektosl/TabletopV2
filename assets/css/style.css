@@ -61,6 +61,10 @@ body {
   font-weight: 300;
   margin-left: 5%;
 }
+.popUp a {
+  text-decoration: none;
+  color: #000;
+}
 
 .icons {
   margin-left: 10vh;
@@ -539,8 +543,14 @@ input[type="checkbox"]+label {
 }
 
 .footer h2 {
+  margin-left: 10px;
+  margin-right: 10px;
   font-size: large;
   font-weight: 200;
+}
+
+.footer a {
+text-decoration: none;
 }
 
 .video-container {
