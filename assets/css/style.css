@@ -36,7 +36,7 @@ body {
 
 .popUp {
   display: flex;
-  height: 50px;
+  height: 65px;
   border-bottom: solid black 0.5px;
   align-items: center;
   z-index: 5;
@@ -59,7 +59,8 @@ body {
 
 .popUp h2 {
   font-weight: 300;
-  margin-left: 5%;
+  margin-left: 3%;
+  margin-right: 2%;
 }
 .popUp a {
   text-decoration: none;
@@ -67,7 +68,7 @@ body {
 }
 
 .icons {
-  margin-left: 10vh;
+  display: inline;
 }
 
 header {
